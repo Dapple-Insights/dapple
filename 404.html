@@ -1316,7 +1316,8 @@ window.dappleSetPage = function (id, push) {
   [data-cf-privacy] a { color: #D6D6D2; text-decoration: underline; text-underline-offset: 2px; }
   @media (hover: hover) { [data-cf-privacy] a:hover { color: #FFFFFF; } }
   [data-cf-hp] { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
-  [data-cf-tick] { width: 44px; height: 44px; display: grid; place-items: center; color: #8CEED1; }
+  /* flex: none, or a column of text squashes the tick's box to nothing and the tick spills over the heading */
+  [data-cf-tick] { flex: none; width: 44px; height: 44px; display: grid; place-items: center; color: #8CEED1; }
   [data-cf-summary] { margin: 0; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 10px 18px; padding-top: 16px; border-top: 1px solid #2E2E2E; font-size: 14px; line-height: 1.45; }
   [data-cf-summary] dt { color: #8A8A86; }
   [data-cf-summary] dd { margin: 0; color: #FFFFFF; overflow-wrap: anywhere; }
@@ -1601,6 +1602,8 @@ window.dappleSetPage = function (id, push) {
     [data-prodhero] [data-heroline] { display: block; white-space: nowrap !important; }
     [data-prodhero]:has(> [data-herochart]) p { margin-bottom: 24px !important; }
     [data-herochart-plot] > div:first-child { height: 120px !important; }
+    /* Focus's line chart a little taller (Jason, 27 Oct), into the spare room around it, so the button doesn't move */
+    section[data-screen-label="Focus — hero"] [data-herochart-plot] > div:first-child { height: 150px !important; }
     /* The chart takes the room between the line and the button, centred in it (see the shared hero height below) */
     [data-prodhero] > [data-herochart] { margin-bottom: 24px !important; flex: 1 1 auto !important; justify-content: center; }
     [data-prodhero]:has(> [data-herochart]) [data-prodcta] { margin-top: 0 !important; }
@@ -2957,7 +2960,7 @@ window.dappleSetPage = function (id, push) {
           </h1>
           <p style="font-size: clamp(17px, 1.15vw, 22px); line-height: 1.55; color: #BEBEBE; margin: 0 0 clamp(32px, 2.3vw, 44px); max-width: clamp(500px, 32vw, 600px);">Dapple is a digital competitive intelligence company, measuring what your customers value against the standards your competitors set.</p>
           <div data-herocta="true">
-            <a href="/contact/" data-nav="block" data-cta="dark" data-primarycta="true" sc-camel-on-click="{{ goContact }}">See my pattern <span><svg data-ico="arrow" aria-hidden="true"><use href="/assets/icons.svg#arrow"></use></svg></span></a>
+            <a href="/contact/" data-nav="block" data-cta="dark" data-primarycta="true" sc-camel-on-click="{{ goContact }}">See your pattern <span><svg data-ico="arrow" aria-hidden="true"><use href="/assets/icons.svg#arrow"></use></svg></span></a>
           </div>
         </div>
 
@@ -3378,7 +3381,8 @@ class Component extends DCLogic {
   };
   // Home product cards: the two example charts move with the scroll, in four steps. Each chart's progress runs
   // from the moment it is fully on screen (its bottom at the foot of the window) until its top reaches the
-  // header, in fifths; the first step happens on arrival, so the last lands one fifth before the end. In the ranking "You" climbs from 5th to 1st, overtaking one brand per step;
+  // header, in fifths, brought forward by SOL_LEAD (about one and a half mouse-wheel scrolls, Jason 27 Oct) so the
+  // chart is already moving as it arrives and finishes higher up the page. In the ranking "You" climbs from 5th to 1st, overtaking one brand per step;
   // in Focus the line draws left to right a quarter at a time and the score follows the line. It runs both
   // ways: scrolling back up steps the charts back to where they started. Reduced motion shows them finished.
   solRef = (node) => {
@@ -3393,7 +3397,8 @@ class Component extends DCLogic {
     node.querySelectorAll('[data-solchart]').forEach(chart => {
       const kind = chart.querySelector('[data-rank]') ? 'rank' : 'focus';
       const r = chart.getBoundingClientRect(), run = window.innerHeight - hdr - r.height;
-      const p = run > 0 ? (window.innerHeight - r.bottom) / run : (r.top < hdr ? 1 : 0);
+      const SOL_LEAD = 150;
+      const p = run > 0 ? (window.innerHeight - r.bottom + SOL_LEAD) / run : (r.top < hdr ? 1 : 0);
       // One step in hand: the first move comes as soon as the chart is fully on screen. Phones show the charts
       // standing still: the ranking with "You" in the middle (3rd, 66), the Focus line complete.
       const phone = this.isPhone();
@@ -4015,7 +4020,7 @@ class Component extends DCLogic {
 
     if (lg.view === 'sent') {
       return h('div', { 'data-lg': true, key: 'sent' },
-        h('div', { 'data-cf-tick': true, 'aria-hidden': 'true' }, h('svg', { 'data-ico': 'done', width: '100%', height: '100%', 'aria-hidden': 'true' }, h('use', { href: '/assets/icons.svg#done' }))),
+        h('div', { 'data-cf-tick': true, 'aria-hidden': 'true' }, h('svg', { 'data-ico': 'done', width: 44, height: 44, 'aria-hidden': 'true' }, h('use', { href: '/assets/icons.svg#done' }))),
         head('Check your inbox', 'If an account exists for ' + lg.email.trim() + ', you’ll get an email with a link to reset your password in the next few minutes.'),
         h('button', { type: 'button', 'data-lg-link': true, onClick: toView('login') }, h('span', { 'data-lg-arrow': true, 'data-back': true, 'aria-hidden': 'true' }, h('svg', { 'data-ico': 'arrow', 'data-flip': true, 'aria-hidden': 'true' }, h('use', { href: '/assets/icons.svg#arrow' }))), 'Back to login'));
     }
