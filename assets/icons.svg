@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<!--
+  Dapple icons: the one shared set used across the site, as <svg><use href="/assets/icons.svg#name"/></svg>.
+  Line work is currentColor (it takes the colour of the text around it). The soft spot behind the feature
+  icons is the CSS variable "icon-spot", set in src/site.html.
+  Feature icons: 40-unit grid, drawn at 34-42px, 2-unit strokes, round ends, a squircle spot set low-right,
+  and small solid "data point" dots as the recurring detail.
+  Utility icons (chevron, close, mail menu, alert): 24-unit grid, the same line style, no spot.
+-->
+<defs>
+  <path id="spot" d="M24 11C32 11 35 14 35 22S32 33 24 33 13 30 13 22 16 11 24 11Z" style="fill: var(--icon-spot, rgba(140,238,209,.3))"/>
+</defs>
+
+<!-- Arrows -->
+<!-- One continuous arrow (Jason, 27 Oct: no dot-then-gap) -->
+<symbol id="arrow" viewBox="0 0 24 24">
+  <path d="M5 12H19M14 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="arrow-spot" viewBox="0 0 40 40">
+  <path d="M20 6C30.5 6 34 9.5 34 20S30.5 34 20 34 6 30.5 6 20 9.5 6 20 6Z" style="fill: var(--icon-spot, rgba(140,238,209,.3))"/>
+  <path d="M12.5 20H27M22.5 15.5 27 20l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Home: what you'll see -->
+<symbol id="picture" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <circle cx="9" cy="12" r="1.5" fill="currentColor"/><circle cx="9" cy="20" r="1.5" fill="currentColor"/><circle cx="9" cy="28" r="1.5" fill="currentColor"/>
+  <path d="M14 12H31M14 20H27M14 28H22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+<symbol id="closeup" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <circle cx="18" cy="18" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+  <circle cx="18" cy="18" r="1.75" fill="currentColor"/>
+  <path d="M24 24l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+<symbol id="overtime" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <path d="M9 28l6-7 5 4 10-11M24 13h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="15" cy="21" r="2.25" fill="currentColor"/><circle cx="20" cy="25" r="2.25" fill="currentColor"/>
+</symbol>
+
+<!-- Products: Pattern (bars) and Focus (target) -->
+<symbol id="bars" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <path d="M11 29v-7M20 29V11M29 29V18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+<symbol id="target" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <circle cx="20" cy="20" r="10.5" fill="none" stroke="currentColor" stroke-width="2"/>
+  <circle cx="20" cy="20" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+  <circle cx="20" cy="20" r="1.75" fill="currentColor"/>
+</symbol>
+
+<!-- Product qualities -->
+<symbol id="route" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <circle cx="10" cy="11" r="2.25" fill="currentColor"/><circle cx="30" cy="29" r="2.25" fill="currentColor"/>
+  <path d="M14.5 11H24a4.5 4.5 0 0 1 0 9H16a4.5 4.5 0 0 0 0 9h9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="overlap" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <circle cx="16" cy="16" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+  <circle cx="24" cy="16" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+  <circle cx="20" cy="23" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+  <circle cx="20" cy="18.4" r="1.5" fill="currentColor"/>
+</symbol>
+<symbol id="cycle" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <path d="M30 20a10 10 0 1 1-2.93-7.07M30 9.5v4.25h-4.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="20" cy="20" r="1.75" fill="currentColor"/>
+</symbol>
+<symbol id="bolt" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <path d="M22.5 8 13 21.5h7.5L18 32l9.5-13.5H20Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="always" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <path d="M10 19v-.5a4.5 4.5 0 0 1 4.5-4.5H29M25 10l4 4-4 4M30 21v.5a4.5 4.5 0 0 1-4.5 4.5H11M15 22l-4 4 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Pattern / Focus: why it earns its place -->
+<symbol id="checklist" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <path d="M8 12l2 2 3.5-3.5M8 20l2 2 3.5-3.5M18 12h13M18 20h13M18 28h13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="10.5" cy="28" r="1.75" fill="currentColor"/>
+</symbol>
+<symbol id="gauge" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <path d="M9 27a11 11 0 0 1 22 0M20 27l5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="20" cy="27" r="2.25" fill="currentColor"/>
+</symbol>
+<symbol id="lens-alert" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <circle cx="18" cy="18" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M24 24l6 6M18 14v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="18" cy="21.75" r="1.25" fill="currentColor"/>
+</symbol>
+
+<!-- Plans: what sets the price -->
+<symbol id="grid" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <rect x="9" y="9" width="10" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+  <rect x="21" y="9" width="10" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+  <rect x="9" y="21" width="10" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+  <rect x="21" y="21" width="10" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+</symbol>
+<symbol id="layers" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <path d="M20 8 9 14l11 6 11-6ZM9 20l11 6 11-6M9 26l11 6 11-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="globe" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <circle cx="20" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M9 20h22M20 9c3 3 4.5 6.7 4.5 11S23 28 20 31c-3-3-4.5-6.7-4.5-11S17 12 20 9Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="people" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <circle cx="16" cy="15" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M8 31c.8-4.6 4-7 8-7s7.2 2.4 8 7M24 10.8a4.5 4.5 0 0 1 0 8.4M27 24.5c2.3 1 3.7 3.2 4 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+
+<!-- Method -->
+<symbol id="person" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <circle cx="20" cy="14" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M10 31c0-5 4.5-8 10-8s10 3 10 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+<symbol id="phone" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <rect x="13" y="8" width="14" height="24" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M18.5 27.5h3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+<symbol id="audit" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <rect x="9" y="9" width="10" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+  <rect x="21" y="9" width="10" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+  <rect x="9" y="21" width="10" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M22.5 26l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Contact / login: sent -->
+<symbol id="done" viewBox="0 0 40 40">
+  <use href="#spot"/>
+  <path d="M11 20.5l5.5 5.5L29 13.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- List markers (plan cards): a solid squircle in currentColor, the mark in the CSS variable "icon-ink" (default charcoal) -->
+<symbol id="tick-badge" viewBox="0 0 17 17">
+  <path d="M8.5 0C14.9 0 17 2.1 17 8.5S14.9 17 8.5 17 0 14.9 0 8.5 2.1 0 8.5 0Z" fill="currentColor"/>
+  <path d="M4.9 8.8l2.4 2.3 4.8-5" fill="none" stroke="var(--icon-ink, #171717)" style="stroke: var(--icon-ink, #171717)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="plus-badge" viewBox="0 0 17 17">
+  <path d="M8.5 0C14.9 0 17 2.1 17 8.5S14.9 17 8.5 17 0 14.9 0 8.5 2.1 0 8.5 0Z" fill="currentColor"/>
+  <path d="M8.5 5v7M5 8.5h7" fill="none" style="stroke: var(--icon-ink, #171717)" stroke-width="1.9" stroke-linecap="round"/>
+</symbol>
+
+<!-- Utility -->
+<symbol id="chevron" viewBox="0 0 24 24">
+  <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="close" viewBox="0 0 24 24">
+  <path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+<symbol id="mail" viewBox="0 0 24 24">
+  <rect x="3" y="5" width="18" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M7 9.5l5 3.5 5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="copy" viewBox="0 0 24 24">
+  <rect x="9" y="9" width="12" height="12" rx="3.5" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M5 15V7.5A3.5 3.5 0 0 1 8.5 4H15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+<symbol id="external" viewBox="0 0 24 24">
+  <path d="M14 4h6v6M20 4l-8 8M18 14v3.5a3.5 3.5 0 0 1-3.5 3.5h-8A3.5 3.5 0 0 1 3 17.5v-8A3.5 3.5 0 0 1 6.5 6H10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="alert" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M12 7.5v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="12" cy="16.25" r="1.25" fill="currentColor"/>
+</symbol>
+</svg>

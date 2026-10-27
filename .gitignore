@@ -1,0 +1,5 @@
+__pycache__/
+.DS_Store
+.claude/
+# Local working notes: never published
+CLAUDE.md

@@ -1,0 +1,63 @@
+{
+  "site": "https://dapple.ie",
+  "formAccessKey": "b6befb06-003e-4e5e-8924-75a07adfba34",
+  "pages": [
+    {
+      "id": "home",
+      "path": "/",
+      "title": "Dapple | Competitive intelligence for digital experience",
+      "description": "We benchmark the digital journeys that win and keep customers, with real people on live products, so you see exactly how you compare with your competitors."
+    },
+    {
+      "id": "benchmark",
+      "path": "/pattern/",
+      "title": "Dapple Pattern | The complete competitive benchmark",
+      "description": "Rank your full digital experience against every competitor that matters, from sign-up to behind the login, with findings your team can act on."
+    },
+    {
+      "id": "tracking",
+      "path": "/focus/",
+      "title": "Dapple Focus | Targeted journey measurement",
+      "description": "Measure the journey that matters most against your closest competitors, fast. Make a change, measure again, and know whether it worked."
+    },
+    {
+      "id": "plans",
+      "path": "/plans/",
+      "title": "Plans and pricing: Track, Diagnose, Advise | Dapple",
+      "description": "Three plans for Dapple Pattern and Dapple Focus: Track, Diagnose and Advise. Choose your scope, depth and cadence, and we'll send a tailored quote."
+    },
+    {
+      "id": "method",
+      "path": "/method/",
+      "title": "Our method | How Dapple measures digital experience",
+      "description": "Real customers on live products, moderated and unmoderated testing and a feature audit, with every score traceable to evidence you can watch."
+    },
+    {
+      "id": "about",
+      "path": "/about/",
+      "title": "About Dapple | The people behind the pattern",
+      "description": "Every market has a pattern. Dapple exists to show it. Meet the team behind the research and the principles we won't compromise on."
+    },
+    {
+      "id": "contact",
+      "path": "/contact/",
+      "title": "Contact Dapple | Let's talk about your market",
+      "description": "Tell us what you want to measure and we'll show you what a Dapple study would look like. Or email us at contact@dapple.ie."
+    },
+    {
+      "id": "privacy",
+      "path": "/privacy/",
+      "title": "Privacy notice | Dapple",
+      "description": "What personal information the Dapple website collects, why we use it, who handles it and the rights you have over it."
+    },
+    {
+      "id": "login",
+      "path": "/login/",
+      "title": "Client login | Dapple",
+      "description": "Log in to see your Dapple results.",
+      "noindex": true
+    }
+  ],
+  "linkedin": "https://www.linkedin.com/company/dappleintelligence/",
+  "dashboardUrl": ""
+}
