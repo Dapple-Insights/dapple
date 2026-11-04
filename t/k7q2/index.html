@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Opening app…</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+         font-family: Poppins, Arial, sans-serif; background: #fff; color: #222; text-align: center; padding: 24px; box-sizing: border-box; }
+  .box { max-width: 360px; }
+  h1 { font-size: 20px; font-weight: 600; margin: 0 0 8px; }
+  p { font-size: 15px; color: #555; margin: 0 0 20px; }
+  a.btn { display: block; padding: 14px; margin: 10px 0; border-radius: 10px; background: #222; color: #fff;
+          text-decoration: none; font-size: 15px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="box">
+  <h1 id="title">Opening…</h1>
+  <p id="msg"></p>
+  <div id="buttons" hidden>
+    <a class="btn" id="ios" href="#">I'm on an iPhone</a>
+    <a class="btn" id="android" href="#">I'm on Android</a>
+  </div>
+</div>
+<script>
+  // ===== BRAND LINKS: one line per brand. Code = what goes after ?b= in the link =====
+  var BRANDS = {
+    wh: { name: "William Hill",
+          ios: "https://apps.apple.com/ie/app/william-hill-sports-betting/id6470913794",
+          android: "https://play.google.com/store/apps/details?id=com.williamhill.sports.android" }
+    // To add a brand, add a comma after the closing brace above, then a line like:
+    // pp: { name: "Paddy Power", ios: "https://apps.apple.com/...", android: "https://play.google.com/..." }
+  };
+  // ===================================================================================
+
+  var code = (new URLSearchParams(location.search).get("b") || "").toLowerCase().trim();
+  var brand = BRANDS[code];
+  var title = document.getElementById("title"), msg = document.getElementById("msg");
+
+  if (!brand) {
+    title.textContent = "Link not recognised";
+    msg.textContent = "Please let the research team know this link isn't working.";
+  } else {
+    var ua = navigator.userAgent || "";
+    var isAndroid = /android/i.test(ua);
+    var isIOS = /iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+    title.textContent = "Opening " + brand.name + "…";
+    document.getElementById("ios").href = brand.ios;
+    document.getElementById("android").href = brand.android;
+    var target = isAndroid ? brand.android : (isIOS ? brand.ios : null);
+    if (target) {
+      msg.textContent = "Taking you to the app store. Tap Open if the app is installed.";
+      setTimeout(function () { location.replace(target); }, 1200);
+      setTimeout(function () { document.getElementById("buttons").hidden = false; }, 3000);
+    } else {
+      title.textContent = "Which phone are you using?";
+      msg.textContent = "This study needs an iPhone or Android phone. If you're on a computer, please open this link on your phone instead.";
+      document.getElementById("buttons").hidden = false;
+    }
+  }
+</script>
+</body>
+</html>
